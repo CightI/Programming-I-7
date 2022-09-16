@@ -4,8 +4,8 @@ from stanfordkarel import *
 class ktools:
 
     def m(self):
-      """Short for Move"""
-      move()
+        """Short for Move"""
+        move()
 
     def tl(self):
         """Turn Left"""
@@ -87,7 +87,9 @@ class ktools:
 
 def main():
     """ Karel code goes here! """
-    self.m()
+    kt = ktools()
+    kt.h()
+    kt.e()
 
     pass
 
