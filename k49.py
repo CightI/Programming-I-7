@@ -1,4 +1,5 @@
 from stanfordkarel import *
+from time import sleep
 
 
 class ktools:
@@ -117,7 +118,7 @@ class ktools:
         self.put2()
         self.m()
         self.m()
-      
+
     def o(self):
         """Print o using beepers"""
         self.put2()
@@ -142,20 +143,118 @@ class ktools:
         self.m()
         self.m()
         self.m()
-        
-        
-          
+
+    def u(self):
+        """Print U using beepers"""
+        self.put2()
+        self.m()
+        self.put()
+        self.tl()
+        self.m()
+        self.put2()
+        self.m()
+        self.put2()
+        self.tl()
+        self.m()
+        self.m()
+        self.put()
+        self.tl()
+        self.m()
+        self.put2()
+        self.m()
+        self.put()
+        self.m()
+        self.tl()
+        self.m()
+        self.m()
+        self.m()
+        self.m()
+
+    def k(self):
+        """Print K using beepers"""
+        self.tl()
+        self.put5()
+        self.ta()
+        self.m()
+        self.m()
+        self.tl()
+        self.m()
+        self.put()
+        self.m()
+        self.tl()
+        self.m()
+        self.put()
+        self.m()
+        self.tr()
+        self.m()
+        self.put()
+        self.tr()
+        self.m()
+        self.m()
+        self.m()
+        self.m()
+        self.tr()
+        self.put()
+        self.m()
+        self.tr()
+        self.m()
+        self.put()
+        self.tr()
+        self.m()
+        self.m()
+        self.m()
+        self.tr()
+        self.m()
+        self.tl()
+
+    def fic(self) -> bool:
+      """Front is Clear"""
+      return front_is_clear()
+
+    def fib(self) -> bool:
+      """Front is Blocked"""
+      return not self.fic()
+
+    def ric(self) -> bool:
+      """Right is clear"""
+      self.tr()
+      if self.fic():
+        self.tl()
+        return True
+        self.tl()
+        return False
+
+    def rib(self) -> bool:
+      """Right is Blocked"""
+      return not self.ric()
 
 
+    def mazemove(self):
+      """Maze Move"""
+      if self.fib():
+        self.tl()
+      else:
+        self.m()
+        if self.ric():
+          self.tr()
+          self.m()
+          if self.ric():
+            self.tr()
+            self.m()
+      pass
+        
+
+  
 def main():
     """ Karel code goes here! """
     kt = ktools()
-    kt.h()
-    kt.e()
-    kt.l()
-    kt.l()
-    kt.o()
+    kt.m()
+    kt.tl()
+    kt.m()
+    kt.mazemove()
 
+    kt.m()
+  
     pass
 
 
