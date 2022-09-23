@@ -251,9 +251,10 @@ def main():
     kt.m()
     kt.tl()
     kt.m()
-    kt.mazemove()
-
     kt.m()
+    
+
+
   
     pass
 

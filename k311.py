@@ -67,6 +67,7 @@ class ktools:
         self.m()
         self.m()
         self.m()
+      
 
     def e(self):
         """Print E using beepers"""
@@ -206,13 +207,104 @@ class ktools:
         self.m()
         self.tl()
 
+    def fic(self) -> bool:
+      """Front is Clear"""
+      return front_is_clear()
 
+    def fib(self) -> bool:
+      """Front is Blocked"""
+      return not self.fic()
+
+    def ric(self) -> bool:
+      """Right is clear"""
+      self.tr()
+      if self.fic():
+        self.tl()
+        return True
+        self.tl()
+        return False
+
+    def rib(self) -> bool:
+      """Right is Blocked"""
+      return not self.ric()
+
+
+    def mazemove(self):
+      """Maze Move"""
+      if self.fib():
+        self.tl()
+      else:
+        self.m()
+        if self.ric():
+          self.tr()
+          self.m()
+          if self.ric():
+            self.tr()
+            self.m()
+      pass
+
+    def mm(self, num):
+      """Move Multiple"""
+      for number in range(0, num):
+        self.m()
+
+
+    def putm(self, num):
+        """Put Multiple"""
+        for i in range(num - 1):
+          self.put()
+          self.m()
+          self.put()
+
+    def pickm(self, num):
+      """Pick Multiple"""
+      for _ in range(num - 1):
+        self.pick()
+        self.m()
+        self.pick()
+
+
+          
+  
 def main():
     """ Karel code goes here! """
     kt = ktools()
+    kt.mm(4)
+    kt.tl()
+    kt.mm(4)
+    kt.put()
+    kt.tl()
+    kt.mm(3)
+    kt.tr()
+    kt.m()
+    kt.tr()
+    kt.mm(3)
+    kt.put()
+    kt.tl()
+    kt.mm(3)
+    kt.tr()
+    kt.m()
+    kt.tr()
+    kt.mm(3)
+    kt.put()
+    kt.tl()
+    kt.mm(3)
+    kt.tr()
+    kt.m()
+    kt.tr()
+    kt.mm(3)
+    kt.put()
+    kt.tl()
+    kt.mm(3)
+    kt.tr()
+    kt.mm(4)
+    kt.tl()
+    
+    
 
     pass
 
 
 if __name__ == "__main__":
     run_karel_program()
+

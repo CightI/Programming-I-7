@@ -268,7 +268,7 @@ class ktools:
 def main():
     """ Karel code goes here! """
     kt = ktools()
-        kt.tl()
+    kt.tl()
     kt.mm(4)
     kt.ta()
     kt.putm(5)
